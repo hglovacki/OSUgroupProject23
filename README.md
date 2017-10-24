@@ -1,8 +1,11 @@
 ## Rock Paper Scissors
 
 *Notes:*
+
 *Use tools to colllaborate.*
+
 *Filename: Group23.zip, there should be only 1 submit"*
+
 *NO LATE SUBMISSION!!*
 
 
