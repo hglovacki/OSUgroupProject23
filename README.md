@@ -15,7 +15,7 @@
 	Class Scissor
 	Class RPSGame
 
-	[Class constructs/design](https://github.com/nishanttimilsina/OSUgroupProject23/projects/1)
+[Class constructs/design](https://github.com/nishanttimilsina/OSUgroupProject23/projects/1)
 
 *please leave a comment, suggestion or any remarks on how we are going to construct these classes. we can simply chat in project page :)*
 
