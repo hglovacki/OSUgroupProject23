@@ -9,6 +9,10 @@ class Tool
             char type;
      public:
             void SetStrength(int);
+            int  getStrength();
+            
+            void setType(char);
+            char getType();
 };
 
 #endif
