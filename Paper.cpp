@@ -36,4 +36,14 @@ Paper::Paper(int newStrength)
 int Paper::fight(Tool opponent)
 {
   //Double Strength Temporarily if opponent.getType() == 'r'
+  if(opponent.getType == 'r')
+  {
+    return this->strength * 2;
+  }
   //Halve Strength Temporarily if opponent.getType() == 's'
+  else if(opponent.getType == 's')
+  {
+    return this->strength * 0.5;
+  }
+}
+  
