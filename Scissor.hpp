@@ -3,6 +3,8 @@
 #ifndef SCISSOR_HPP
 #define SCISSOR_HPP
 
+#include "Tool.hpp"
+
 class Scissor : public Tool
 {
     public:
