@@ -14,6 +14,9 @@ class RPSGame
             int computerWins = 0;
             int ties = 0;
             unsigned seed;
+            int menuChoice;
+            int playerChoice;
+            int computerChoice;
   public:
             
 };
