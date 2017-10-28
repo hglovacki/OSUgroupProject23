@@ -33,7 +33,7 @@ Paper::Paper(int newStrength)
 * If the parameter is equal to r then strength will temporarily double.
 *If the parameter is equal to s then strength will temporarily halve.
 ****************************************************************/
-int Paper::fight(Tool opponent)
+int Paper::fight(Tool *opponent)
 {
   //Pass the other Tool object to this function from the Game.
   //Double Strength Temporarily if opponent.getType() == 'r'
