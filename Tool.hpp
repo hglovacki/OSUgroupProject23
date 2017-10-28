@@ -8,6 +8,7 @@ class Tool
             int strength;
             char type;
      public:
+            virtual int fight(Tool) = 0;
             void SetStrength(int);
             int  getStrength();
             
