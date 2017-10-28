@@ -32,7 +32,17 @@ Rock::Rock(int newStrength)
 * type of the Tool object is 's' and will temporarily halve the strength of
 * this object if the type of the Tool object is 'p'
 *************************************************************/
-int Rock::fight(Tool opponent)
+int Rock::fight(Tool *opponent)
 {
-  
+  //Pass the other Tool to this function
+  //Double the strength of this tool object
+  if(opponent->getType() == 's')
+  {
+    return strength*2;
+  }
+  else if(opponent->getType() == 'p')
+  {
+    return strength*0.5;
+  }
+}
 }
