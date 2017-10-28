@@ -2,6 +2,7 @@
 //This class must inherit from the Tool class
 
 #include "Scissor.hpp"
+#include "Tool.hpp"
 
 /*******************************************************
                 Default Constructor
@@ -36,13 +37,13 @@ int Scissor::fight(Tool *opponent)
 {
     //Pass the other Tool object to this function from the Game
     //Double the strength if the opponents type is 'p'
-    if(opponent.getType() == 'p')
+    if(opponent->getType() == 'p')
     {
       return strength*2;
     }
-    else if(opponent.getType() == 'r')
+    else if(opponent->getType() == 'r')
     {
       return strength*0.5;
     }
 }
-}
+
