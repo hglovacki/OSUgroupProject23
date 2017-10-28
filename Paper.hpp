@@ -10,7 +10,7 @@ class Paper : public Tool
           public:
                   Paper();
                   Paper(int);
-                  int fight(Tool);
+                  virtual int fight(Tool);
 };
 
 #endif
