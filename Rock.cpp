@@ -2,6 +2,7 @@
 //This class must inherit from the Tool class
 
 #include "Rock.hpp"
+#include "Too.hpp"
 
 /********************************************************
                   Default Constructor
