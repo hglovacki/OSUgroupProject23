@@ -32,7 +32,17 @@ Scissor::Scissor(int newStrength)
 * will halve if the type of the Tool object passed to the parameter 
 * is 'r'
 ***************************************************************/
-int Scissor::fight(Tool opponent)
+int Scissor::fight(Tool *opponent)
 {
-    
+    //Pass the other Tool object to this function from the Game
+    //Double the strength if the opponents type is 'p'
+    if(opponent.getType() == 'p')
+    {
+      return strength*2;
+    }
+    else if(opponent.getType() == 'r')
+    {
+      return strength*0.5;
+    }
+}
 }
