@@ -35,5 +35,16 @@ Paper::Paper(int newStrength)
 ****************************************************************/
 int Paper::fight(Tool opponent)
 {
+  //Pass the other Tool object to this function from the Game.
   //Double Strength Temporarily if opponent.getType() == 'r'
+  if(opponent.getType() == 'r')
+  {
+    return strength*2;
+  }
   //Halve Strength Temporarily if opponent.getType() == 's'
+  else if(opponent.getType() == 's')
+  {
+    return strength*0.5;
+  }
+}
+  
