@@ -13,6 +13,7 @@ class RPSGame
             int humanWins = 0;
             int computerWins = 0;
             int ties = 0;
+            unsigned seed;
   public:
             
 };
