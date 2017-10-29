@@ -18,6 +18,7 @@ class RPSGame
             int playerChoice;
             int computerChoice;
   public:
+            int menu();
             
 };
 
