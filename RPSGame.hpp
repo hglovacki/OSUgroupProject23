@@ -17,6 +17,8 @@ class RPSGame
             int menuChoice;
             int playerChoice;
             int computerChoice;
+            int humanStrength;
+            int computerStrength;
   public:
             int menu();
             void deleteTools();
