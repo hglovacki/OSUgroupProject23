@@ -22,6 +22,7 @@ class RPSGame
   public:
             int menu();
             void deleteTools();
+            void fightTools();
             
 };
 
