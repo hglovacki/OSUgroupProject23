@@ -19,6 +19,7 @@ class RPSGame
             int computerChoice;
   public:
             int menu();
+            void deleteTools();
             
 };
 
