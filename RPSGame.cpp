@@ -118,6 +118,9 @@ int RPSGame::menu()
         //create a scissor object for the computer
         computer = new Scissor;
       }
+    
+      //Display what tool the computer is using to the user
+      cout << "The computer uses " << computer->getType(); << endl << endl;
       
       //Return 1 so that the main program trying to run the game can know what the user chose to do
       return 1;
@@ -136,7 +139,41 @@ void RPSGame::deleteTools()
   delete computer;
 }
 
-
+/****************************************************************************
+*                     RPSGame::fightTools()
+* This function will be responsible for making the two tools of the human and computer
+* fight. It will start by calling the fight function of each tool passing the
+* other tool to their call. We can compare the values returned by these functions
+* to figure out the result of the fight. 
+*****************************************************************************/
+void RPSGame::fightTools()
+{
+  //Call the two fight functions to get the strengths of the tools.
+  humanStrength = human->fight(computer);
+  computerStrength = computer->fight(human);
+  
+  //If human is stronger than computer, human wins, increase the human score
+  if(humanStrength > computerStrength)
+  {
+    cout << "You win!!!" << endl << endl;
+    humanWins++;
+    
+  }
+  //If human is weaker than computer, computer wins, increase the computer score
+  else if(humanStrength < computerStrength)
+  {
+    cout << "Computer Wins!" << endl << endl;
+    computerWins++;
+  }
+  //If human and computer have the same strength, there is a tie, and the tie count should increase
+  else if(humanStrength == computerStrength)
+  {
+    cout << "There was a tie!" << endl << endl;
+    ties++;
+  }
+}
+    
+    
   
  
         
