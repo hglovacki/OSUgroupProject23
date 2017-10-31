@@ -10,23 +10,38 @@
 
 class RPSGame
 {
-  protected:
-            Tool *human;
-            Tool *computer;
-            int humanWins = 0;
-            int computerWins = 0;
-            int ties = 0;
-            unsigned seed;
-            int menuChoice;
-            int playerChoice;
-            int computerChoice;
-            int humanStrength;
-            int computerStrength;
-  public:
-            int menu();
-            void deleteTools();
-            void fightTools();
-            
+protected:
+    Tool *human;
+    Tool *computer;
+    int humanWins = 0;
+    int computerWins = 0;
+    int ties = 0;
+    unsigned seed;
+    int menuChoice;
+    int playerChoice;
+    int computerChoice;
+    int humanStrength;
+    int computerStrength;
+
+public:
+    //constructor
+    RPSGame();
+    
+    //destructor
+    ~RPSGame();
+    
+    //Game methods
+    int menu();
+    void deleteTools();
+    void fightTools();
+
+    //utility functions
+    void intake();
+    void intake3();
+    void clearBuffer();
+    bool validatePosInt(int);
+    void menuQuestion(std::string);
+    void randomizer();
 };
 
 #endif

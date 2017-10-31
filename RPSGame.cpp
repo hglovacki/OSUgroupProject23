@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "RPSGame.hpp"
 
 using std::cout;
 using std::cin;
@@ -18,110 +19,68 @@ using std::rand;
 ******************************************************************/
 int RPSGame::menu()
 {
-  //Ask the user what they would like to do
-  cout << "Please enter the number of your choice from the list below." << endl;
-  cout << "1. Play RPS" << endl;
-  cout << "2. Quit Game" << endl << endl;
-  //Input Validation loop
-  for(;;)
-  {
-    if(cin >> menuChoice)
-    {
-      if(menuChoice == 1 || menuChoice == 2)
-      {
-        break;
-      }
-      else
-      {
-        cout << "You did not enter a valid menu option." << endl;
-        cin.clear();
-        cin.ignore(10000, '\n');
-      }
-    }
-    else
-    {
-      cout << "You did not enter a valid menu option." << endl;
-      cin.clear();
-      cin.ignore(10000, '\n');
-    }
-  }
+    //Ask the user what they would like to do
+    menuQuestion("Please enter the number of your choice from the list below.");
+    menuQuestion("1. Play RPS");
+    menuQuestion("2. Quit Game");
+    
+    //take valid menuChoice from user
+    intake();
   
-  if(menuChoice == 2)
-  {
-      return 0;
-      //Check for a 0 value in the main function, by calling this function
-      //If so, quit program
-  }
-  else if(menuChoice == 1)
-  {
-      //Setup the two tools for the human and computer to battle with.
-      //Start by asking the user which tool they would like to use
-      cout << "Please pick a tool to battle with from the list below by entering the corresponding number." << endl;
-      cout << "1. Rock" << endl;
-      cout << "2. Paper" << endl;
-      cout << "3. Scissor" << endl << endl;
-      //Input Validation loop
-      for(;;)
-      {
-        if(cin >> playerChoice)
-        {
-          if(playerChoice >= 1 && playerChoice <= 3)
-          {
-            break;
-          }
-          else
-          {
-            cout << "You did not enter a valid tool choice. Please try again." << endl << endl;
-            cin.clear();
-            cin.ignore(100000, '\n');
-          }
-        }
-        else
-        {
-          cout << "You did not enter a valid tool choice. Please try again." << endl << endl;
-          cin.clear();
-          cin.ignore(100000, '\n');
-        }
-      }
-    
-      //Depending on what the user entered, set up the tool
-      if(playerChoice == 1)
-      {
-        //create a rock object for the user
-        human = new Rock;
-      }
-      else if(playerChoice == 2)
-      {
-        //Create a paper object for the user
-        human = new Paper;
-      }
-      else if(playerChoice == 3)
-      {
-        //Create a scissor object for the user
-        human = new Scissor;
-      }
-    
-      //Now randomly pick a tool for the computer to use against the user
-      computerChoice = rand()%3 + 1;
-      if(computerChoice == 1)
-      {
-        //create a rock object for the computer
-        computer = new Rock;
-      }
-      else if(computerChoice == 2)
-      {
-        //create a paper object for the computer
-        computer = new Paper;
-      }
-      else if(computerChoice == 1)
-      {
-        //create a scissor object for the computer
-        computer = new Scissor;
-      }
+    while (menuChoice < 2){
       
-      //Return 1 so that the main program trying to run the game can know what the user chose to do
-      return 1;
-  }
+        //Setup the two tools for the human and computer to battle with.
+        //Start by asking the user which tool they would like to use
+        menuQuestion("Please pick a tool to battle with from the list below by entering the corresponding number.");
+        menuQuestion("1. Rock");
+        menuQuestion("2. Paper");
+        menuQuestion("3. Scissor");
+        
+        //Input Validation loop
+        intake3();
+        
+        //Depending on what the user entered, set up the tool
+        if(playerChoice == 1)
+        {
+            //create a rock object for the user
+            human = new Rock;
+        }
+        else if(playerChoice == 2)
+        {
+            //Create a paper object for the user
+            human = new Paper;
+        }
+        else if(playerChoice == 3)
+        {
+            //Create a scissor object for the user
+            human = new Scissor;
+        }
+        
+        //Now randomly pick a tool for the computer to use against the user
+        computerChoice = rand()%3 + 1;
+        
+        if(computerChoice == 1)
+        {
+            //create a rock object for the computer
+            computer = new Rock;
+        }
+        else if(computerChoice == 2)
+        {
+            //create a paper object for the computer
+            computer = new Paper;
+        }
+        else if(computerChoice == 1)
+        {
+            //create a scissor object for the computer
+            computer = new Scissor;
+        }
+        
+        menuQuestion("Would you like to Play Again?");
+        menuQuestion("1. Play RPS");
+        menuQuestion("2. Quit Game");
+        
+        intake();
+    }//return to main
 }
 
 /**************************************************************************
@@ -136,6 +95,52 @@ void RPSGame::deleteTools()
   delete computer;
 }
 
+
+/***************************************************************************************************
+ ** utility functions
+ ***************************************************************************************************/
+//intake binary input that only accepts 1 or 2
+void RPSGame::intake(){
+    cout << " ➡ ";
+    cin >> menuChoice;
+    while (!(cin) or ((menuChoice < 1) or (menuChoice > 2)))
+    {
+        clearBuffer();
+        cout << "Invalid: Please enter 1 or 2 ➡ ";
+        cin >> menuChoice;
+    }
+    clearBuffer();
+}
+//intake binary input that only accepts 1 or 2
+void RPSGame::intake3(){
+    do
+    {
+        clearBuffer();
+        cout << "Please enter 1 or 2 or 3 ➡";
+        cin >> playerChoice;
+    }while ((!(cin)) or ((playerChoice < 1) or (playerChoice > 3)));
+    clearBuffer();
+}
+
+//clear keyboard buffer
+void RPSGame::clearBuffer(){
+    cout << "\nINFO: clearing buffer ... \n" << endl;
+    cin.clear();
+    cin.ignore(15, '\n');
+}
+//return true or false if positive integer
+bool RPSGame::validatePosInt(int number){
+    if ( number < 1) {
+        cout <<"\nERROR: Not a positive integer ... \n";
+        return false;
+    }
+    return true;
+}
+//Menu Questionaire
+void RPSGame::menuQuestion(std::string text){
+    cout << text << endl;
+}
+//randomizer
 
   
  
