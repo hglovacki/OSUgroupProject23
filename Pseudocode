@@ -1,0 +1,28 @@
+/* Pseudocode:
+ *
+ *  Note from HG: I did this quickly just to get us started; I'm sure it's not complete or watertight; didn't want to get 
+ *  too far down the line before seeing what you all were thinking.  Feel free to edit this, or post your own!
+ *
+ * Prompt user to select tool 
+ *
+ *    if (rock)
+ *       userTool* = new Rock();
+ *
+ *    (likewise for other tools)
+ *
+ * Randomly select tool for computer
+ *
+ *    if (rock)
+ *      compTool* = new Rock();
+ *
+ *    (likewise for other tools)
+ *
+ * Call compare(userTool, compTool), which returns a bool 
+ *
+ * Depending on that bool, print tools selected, who won, and tally who won 
+ *
+ * Print total wins so far
+ *
+ * Prompt user to select tool or quit.
+ *
+ */
