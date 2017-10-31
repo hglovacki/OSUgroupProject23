@@ -1,5 +1,8 @@
 //Header File for the RPSGame class
 
+#ifndef RPSGAME_HPP
+#define RPSGAME_HPP
+
 #include "Tool.hpp"
 #include "Rock.hpp"
 #include "Scissor.hpp"
