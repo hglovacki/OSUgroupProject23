@@ -1,4 +1,4 @@
-OBJS = RPSGame.o Scissor.o Paper.o Rock.o Tool.o
+OBJS = RPSGame.o Scissor.o Paper.o Rock.o Tool.o play_game.o
 CC = g++
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
@@ -6,6 +6,9 @@ LFLAGS = -Wall $(DEBUG)
 
 game : $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o game
+
+play_game.o : play_game.cpp RPSGame.hpp
+    $(CC) $(CFALGS) play_game.cpp
 
 RPSGame.o : RPSGame.hpp RPSGame.cpp Scissor.hpp Paper.hpp Rock.hpp Tool.hpp
 	$(CC) $(CFLAGS) RPSGame.cpp
