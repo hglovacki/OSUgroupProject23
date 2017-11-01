@@ -3,6 +3,8 @@
 #ifndef RPSGAME_HPP
 #define RPSGAME_HPP
 
+#include<iostream>
+#include<string>
 #include "Tool.hpp"
 #include "Rock.hpp"
 #include "Scissor.hpp"
@@ -13,9 +15,9 @@ class RPSGame
 protected:
     Tool *human;
     Tool *computer;
-    int humanWins = 0;
-    int computerWins = 0;
-    int ties = 0;
+    int humanWins{0};
+    int computerWins{0};
+    int ties{0};
     unsigned seed;
     int menuChoice;
     int playerChoice;

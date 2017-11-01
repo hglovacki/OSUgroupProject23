@@ -23,7 +23,7 @@ Rock.o : Rock.hpp Rock.cpp Tool.hpp
 	$(CC) $(CFLAGS) Rock.cpp
 
 Tool.o : Tool.hpp Tool.cpp
-	$(CC) $(CFLAGS) Tool.cpp
+	$(CC) -Wc++11-extensions $(CFLAGS) Tool.cpp
 
 clean:
 	\rm *.o *~ game
