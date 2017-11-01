@@ -11,7 +11,7 @@ class Rock : public Tool
       public:
               Rock();
               Rock(int);
-              virtual int fight(Tool);
+              int fight(Tool);
 };
 
 #endif

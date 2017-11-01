@@ -2,7 +2,6 @@
 //This class must inherit from the Tool class
 
 #include "Scissor.hpp"
-#include "Tool.hpp"
 
 /*******************************************************
                 Default Constructor

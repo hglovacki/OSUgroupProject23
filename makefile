@@ -8,7 +8,7 @@ game : $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o game
 
 play_game.o : play_game.cpp RPSGame.hpp
-    $(CC) $(CFALGS) play_game.cpp
+	$(CC) $(CFALGS) play_game.cpp
 
 RPSGame.o : RPSGame.hpp RPSGame.cpp Scissor.hpp Paper.hpp Rock.hpp Tool.hpp
 	$(CC) $(CFLAGS) RPSGame.cpp

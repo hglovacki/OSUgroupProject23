@@ -10,7 +10,7 @@ class Scissor : public Tool
     public:
           Scissor();
           Scissor(int);
-          virtual int fight(Tool);
+          int fight(Tool);
 };
 
 #endif
