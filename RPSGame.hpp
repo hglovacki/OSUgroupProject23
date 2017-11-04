@@ -33,7 +33,7 @@ public:
     ~RPSGame();
     
     //Game methods
-    int menu();
+    void menu();
     void deleteTools();
     void fightTools();
 
