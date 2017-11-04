@@ -46,4 +46,3 @@ int Rock::fight(Tool *opponent)
     return strength*0.5;
   }
 }
-}
