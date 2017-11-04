@@ -17,7 +17,7 @@ using std::rand;
 * would like to use, then will randomly pick which tool the computer will
 * use.
 ******************************************************************/
-int RPSGame::menu()
+void RPSGame::menu()
 {
     //Ask the user what they would like to do
     menuQuestion("Please enter the number of your choice from the list below.");
